@@ -1,0 +1,160 @@
+.circle {
+    position: absolute;
+    left: 450px;
+    bottom: 0;
+    width: 900px;
+    height: 510px;
+    background-color: #355f9b;
+    border-radius: 750px 750px 0 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    animation: pulsation 3s infinite, width 5s ease-in-out, height 5s ease-in-out;
+}
+@keyframes pulsation {
+    0%{
+        background-color: #355f9b;
+        transform: scale(1);
+    }
+    50%{
+        background-color: rgb(38, 38, 74);
+        transform: scale(1.05);
+    }
+    100%{
+        background-color: #355f9b;
+        transform: scale(1);
+
+    }
+}
+
+.timeText{
+    font-size: 100px;
+    font-weight: 600;
+}
+
+.timeAnimation{
+    display: inline-block;
+}
+
+.wrldtxtdiv{
+    position: absolute;
+    left: 450px;
+    top: 200px;
+    font-size: 100px;
+    font-weight: 900;   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 900px;
+    height: 200px;
+    color: #d8eaff;
+    z-index: 2;
+    animation: appear 0.5s ease-in-out;
+}
+@keyframes appear{
+    0%{
+        opacity: 0;
+        transform: translateY(-15px);
+    }   
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.wrldtxt{
+    width: 90%;
+    max-width: 500px;
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0 20px 50px rgba(0,0,0, 0.2);
+    animation : modalAppear 0.2s ease;
+}
+
+.space {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+
+    background:
+        radial-gradient(ellipse at 50% 100%,
+            #142b4d 0%,
+            #080f20 45%,
+            #02040c 100%);
+}
+/* Первый слой звёзд */
+.stars,
+.stars2,
+.stars3 {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.stars {
+    background-image:
+        radial-gradient(2px 2px at 20px 30px, white, transparent),
+        radial-gradient(1px 1px at 100px 150px, white, transparent),
+        radial-gradient(2px 2px at 200px 80px, white, transparent),
+        radial-gradient(1px 1px at 300px 220px, white, transparent),
+        radial-gradient(2px 2px at 400px 120px, white, transparent),
+        radial-gradient(1px 1px at 500px 300px, white, transparent),
+        radial-gradient(2px 2px at 600px 70px, white, transparent),
+        radial-gradient(1px 1px at 700px 190px, white, transparent),
+        radial-gradient(2px 2px at 800px 350px, white, transparent),
+        radial-gradient(1px 1px at 900px 100px, white, transparent);
+
+    background-size: 950px 450px;
+    animation: starMove 100s linear infinite;
+}
+
+
+.stars2 {
+    background-image:
+        radial-gradient(2px 2px at 50px 100px, #b9dcff, transparent),
+        radial-gradient(2px 2px at 250px 250px, #ffffff, transparent),
+        radial-gradient(3px 3px at 450px 150px, #d8eaff, transparent),
+        radial-gradient(2px 2px at 650px 300px, #ffffff, transparent),
+        radial-gradient(2px 2px at 850px 50px, #b9dcff, transparent);
+
+    background-size: 1000px 400px;
+    animation: twinkle 5s ease-in-out infinite alternate;
+}
+
+.stars3 {
+    background-image:
+        radial-gradient(3px 3px at 150px 180px, white, transparent),
+        radial-gradient(3px 3px at 550px 90px, white, transparent),
+        radial-gradient(3px 3px at 850px 250px, white, transparent);
+
+    background-size: 1100px 500px;
+    animation: twinkle 3s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes twinkle {
+    from {
+        opacity: 0.25;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes starMove {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-450px);
+    }
+}
